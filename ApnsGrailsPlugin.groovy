@@ -39,7 +39,8 @@ push notifications to an iPhone client of your Grails application.
         apnsService(ApnsFactoryBean) {
             pathToCertificate = application.config.apns.pathToCertificate ?: null
             certificateResourcePath = application.config.apns.certificateResourcePath ?: null
-            password = application.config.apns.password
+            password = application.config.apns.password ?:null
+			certificates = application.config.apns.certificates ?: null
             environment = configuredEnvironment
         }
     }
